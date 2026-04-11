@@ -1,0 +1,6 @@
+accelerate==1.6.0
+fastapi==0.115.12
+orjson==3.10.16
+psutil==7.0.0
+python-multipart==0.0.20
+uvicorn[standard]==0.34.1

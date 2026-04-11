@@ -1,0 +1,7 @@
+.devcontainer
+.env
+.git
+.gitignore
+__pycache__/
+*.pyc
+test.opus
