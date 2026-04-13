@@ -1,5 +1,5 @@
 
-# diarizen-service
+# audio-diarization-service
 
 Minimal GPU-first HTTP wrapper for offline speaker diarization with `BUT-FIT/diarizen-wavlm-large-s80-md-v2`.
 

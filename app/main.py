@@ -129,7 +129,7 @@ torchaudio.load = compatible_torchaudio_load
 from diarizen.pipelines.inference import DiariZenPipeline
 
 
-LOGGER = logging.getLogger("diarizen-service")
+LOGGER = logging.getLogger("audio-diarization-service")
 
 
 def env_bool(name: str, default: bool) -> bool:
@@ -281,7 +281,7 @@ async def load_pipeline(state: ServiceState) -> None:
 
 def health_payload(state: ServiceState) -> dict[str, Any]:
     return {
-        "service": "diarizen-service",
+        "service": "audio-diarization-service",
         "status": "ready" if state.ready else state.phase,
         "ready": state.ready,
         "model": {
@@ -342,7 +342,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="DiariZen Service",
+    title="Audio Diarization Service",
     version="1.0.0",
     default_response_class=ORJSONResponse,
     lifespan=lifespan,
@@ -353,7 +353,7 @@ app = FastAPI(
 async def root() -> dict[str, Any]:
     state: ServiceState = app.state.service
     return {
-        "service": "diarizen-service",
+        "service": "audio-diarization-service",
         "version": app.version,
         "ready": state.ready,
         "endpoints": ["/health/live", "/health/ready", "/v1/diarize"],
