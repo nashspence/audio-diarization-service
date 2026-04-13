@@ -178,7 +178,7 @@ class Settings:
     diarizen_ref: str = field(default_factory=lambda: os.getenv("DIARIZEN_REF", "d52b8d5e3d96632b1a8a0dc34762bf811471e441"))
     embedding_repo: str = field(default_factory=lambda: os.getenv("EMBEDDING_MODEL_REPO", "pyannote/wespeaker-voxceleb-resnet34-LM"))
     embedding_filename: str = field(default_factory=lambda: os.getenv("EMBEDDING_MODEL_FILENAME", "pytorch_model.bin"))
-    hf_home: str = field(default_factory=lambda: os.getenv("HF_HOME", "/models/hf"))
+    hf_home: str = field(default_factory=lambda: os.getenv("HF_HOME", "/models/cache/huggingface"))
     hf_token: str | None = field(default_factory=lambda: os.getenv("HF_TOKEN") or None)
     offline: bool = field(default_factory=lambda: env_bool("DIARIZEN_OFFLINE", False))
     require_cuda: bool = field(default_factory=lambda: env_bool("REQUIRE_CUDA", True))

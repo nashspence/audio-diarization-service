@@ -8,7 +8,7 @@ Minimal GPU-first HTTP wrapper for offline speaker diarization with `BUT-FIT/dia
 - Starts a single FastAPI service around the upstream `DiariZenPipeline`
 - Loads the model on container startup and only reports ready after load + warmup finish
 - Exposes `POST /v1/diarize` for multipart audio upload
-- Persists the Hugging Face cache in a Docker volume so subsequent runs can stay offline with `DIARIZEN_OFFLINE=true`
+- Persists the Hugging Face cache in the repo-local `./.cache/models/huggingface` directory so subsequent runs can stay offline with `DIARIZEN_OFFLINE=true`
 - Uses one process and one request at a time to keep the local GPU dedicated to diarization
 
 ## Runtime Config

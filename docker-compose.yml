@@ -26,7 +26,4 @@ services:
     restart: unless-stopped
     stop_grace_period: 2m
     volumes:
-      - hf-cache:${HF_HOME}
-
-volumes:
-  hf-cache:
+      - ${MODEL_CACHE_HOST_DIR:-./.cache/models/huggingface}:${HF_HOME}
